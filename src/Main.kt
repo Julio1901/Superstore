@@ -6,8 +6,6 @@ fun main() {
     val julioCard = Card(julio, 1010)
     val eletricGuitar = Product("Eletric Guitar", 1000.0f,
                                     "this is a wosome musical instrument")
-
-
     julioCard.setAccountBalance(3000.0f)
     julioClient.buyProduct(eletricGuitar, julioCard, TypeOfPayment.CREDIT)
 
