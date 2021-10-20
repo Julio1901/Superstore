@@ -9,6 +9,7 @@ fun main() {
     julioCard.setAccountBalance(3000.0f)
     julioClient.buyProduct(eletricGuitar, julioCard, TypeOfPayment.CREDIT)
 
+    //test
 
 
     //println(someCard.getCardName())
