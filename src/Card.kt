@@ -1,11 +1,12 @@
 import kotlin.random.Random
 
-class Card (person : Person, password : Int) {
+class Card (person : Person, password : Int, cardOperator: OperatorOptions) {
     private val cardNumber = makeCardNumber()
     private val customerNameOnCard = makeClienteCardName(person.getName())
     private val passwordNumber = password
     private var accountBalance = 0.0f
     private var creditBalance = 2000.0f
+    private val cardOperator = cardOperator
     //TODO: MAKE A SHOPPING METHOD
 
     fun getCreditBalance() : Float{
