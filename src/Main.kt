@@ -11,8 +11,8 @@ fun main() {
 
     //test
 
-
     //println(someCard.getCardName())
+
 
    // julioFuncionario.showPeopleInfo()
     //julioClient.showPeopleInfo()
