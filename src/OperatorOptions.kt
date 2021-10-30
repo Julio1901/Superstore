@@ -1,3 +1,3 @@
 enum class OperatorOptions {
-    NUBANK, NEON, NEXT
+    NUBANK, NEON, NEXT, INVALID
 }

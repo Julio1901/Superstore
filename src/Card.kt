@@ -1,13 +1,20 @@
 import kotlin.random.Random
 
-class Card (person : Person, password : Int, cardOperator: OperatorOptions) {
-    private val cardNumber = makeCardNumber()
+//Adicionado vaores padrões para poder iniciar uma instãncia como atributo do cliente
+  class Card (person : Person, password : Int = 1111, cardOperator:
+  OperatorOptions = OperatorOptions.INVALID) {
+
+     private val cardNumber = makeCardNumber()
     private val customerNameOnCard = makeClienteCardName(person.getName())
-    private val passwordNumber = password
+    private var password = password
     private var accountBalance = 0.0f
     private var creditBalance = 2000.0f
-    private val cardOperator = cardOperator
+    private var cardOperator = cardOperator
     //TODO: MAKE A SHOPPING METHOD
+
+
+
+
 
     fun getCreditBalance() : Float{
         return this.creditBalance
@@ -26,7 +33,11 @@ class Card (person : Person, password : Int, cardOperator: OperatorOptions) {
     }
 
     fun getPasswordCard() : Int {
-        return this.passwordNumber
+        return this.password
+    }
+
+    fun getCardOperator() : OperatorOptions{
+        return this.cardOperator
     }
 
     fun setAccountBalance(cashValue: Float){
@@ -43,6 +54,17 @@ class Card (person : Person, password : Int, cardOperator: OperatorOptions) {
         }
 
     }
+
+
+
+    fun setCardOperator(cardOperator : OperatorOptions){
+        this.cardOperator = cardOperator
+    }
+
+    fun setPassword (pass : Int){
+     this.password = pass
+    }
+
 
     fun makeCardNumber() : String{
         var cardNumber = ""
