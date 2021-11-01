@@ -7,12 +7,20 @@ class Product (productName: String, productPrice : Float){
         this.productDescription = productDescription
     }
 
-    fun showProductInfo(){
-        println("Product name: $productName\nPrice: R$$productPrice\nProduct Description: $productDescription")
+    fun showProductInfo() : String{
+        var productDetail = ("Product name: $productName\nPrice: " +
+                "R$$productPrice\nProduct " +
+                "Description: $productDescription")
+
+        return productDetail
     }
 
     fun getPrice() : Float{
         return this.productPrice
     }
+    fun getName () : String{
+        return this.productName
+    }
+
 
 }

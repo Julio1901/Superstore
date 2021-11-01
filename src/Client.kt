@@ -6,39 +6,14 @@ class Client (person : Person) : Person(person.getName(), person.getAge(),
     constructor(person: Person, card: Card) : this(person) {
         clientCard.setCardOperator(card.getCardOperator())
         clientCard.setPassword(card.getPasswordCard())
+        clientCard.setAccountBalance(card.getAccountBalance())
+        clientCard.setCreditBalance(card.getCreditBalance())
     }
     //Por padrão, cliente começa com uma instância de cartão com operadora INVALIDA
     var clientCard = Card(person)
 
 
-    fun buyProduct(product : Product , typeOfPayment : TypeOfPayment){
-        var password = requestPasswordCard()
 
-            if (password.equals(this.clientCard.getPasswordCard())) {
-
-                if (typeOfPayment.equals(TypeOfPayment.DEBT)) {
-                    if (product.getPrice() <= this.clientCard.getAccountBalance()) {
-                        this.clientCard.setAccountBalance((this.clientCard.getAccountBalance() - product.getPrice()))
-                        println("successful purchase")
-                        println("Updated card balance: ${this.clientCard.getAccountBalance()}")
-                    } else {
-                        println("Sorry, you don't have enough balance")
-                    }
-                } else if (typeOfPayment.equals(TypeOfPayment.CREDIT)) {
-                    if (product.getPrice() <= this.clientCard.getCreditBalance()) {
-                        this.clientCard.setCreditBalance((this.clientCard.getCreditBalance() - product.getPrice()))
-                        println("successful purchase")
-                        println("Updated credit card balance: ${this.clientCard.getCreditBalance()}")
-                    } else {
-                        println("Sorry, you don't have enough balance")
-                    }
-                } else {
-                    println("Sorry, check infos and try again")
-                }
-        }else{
-            println("Sorry, incorrect password, try again")
-        }
-    }
 
 
     //TODO: Make a method to check if the client number already exists in db
@@ -69,6 +44,5 @@ class Client (person : Person) : Person(person.getName(), person.getAge(),
 
         return userInput
     }
-
 
 }
